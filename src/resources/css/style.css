@@ -1,0 +1,526 @@
+/*
+*       Auteure: Konan-Hoël Lesault
+*       Description: css regroupant toutes les spécificités communes à chaque page
+*/
+
+@font-face {
+    font-family: 'HKGroteskWide-Light';
+    src: url(../fonts/HKGroteskWide_2020D/OTF/HKGroteskWide-Light.otf);
+}
+
+/**//*PRE-MISE EN PAGE*//**/
+
+body {
+    background-color: black;
+    font-family: 'HKGroteskWide-Light', sans-serif; /* Ajoutez une police de secours */
+    color: rgb(0, 0, 0);
+    display: flex; /* Utilisez flexbox */
+    flex-direction: column; /* Orientation verticale */
+    align-items: stretch; /* assure que les enfants s'étendent en largeur */
+    margin: auto;
+    min-height: 100vh; /* Utilisez vh au lieu de % */
+    width: 100%;
+}
+
+html, body {
+    overflow-x: hidden; /* Cache le débordement horizontal */
+    width: 100%;
+    overflow-y: auto; /* permet le défilement vertical si nécessaire */
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    flex: 1; /* Cela permet à main de s'étendre pour occuper tout l'espace disponible */
+}
+
+/**//**//**//**//**//**//**//**/
+/**//*BARRE DE NAVIGATION*//**/
+/**//**//**//**//**//**//**//**/
+
+body, ul {
+    margin: 0;
+    margin: auto;
+    font-size: 26px; /*pour le texte en général...*/
+}
+
+ul
+{
+    padding: 0;
+}
+
+.navbar {
+    background-color:  #ffffff;
+    overflow: hidden;
+    position: relative;
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 80px; /* Adjust this value for the height of the navbar */
+}
+
+.nav-item a {
+    color: #000000;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-item a:hover {
+    color: rgb(45, 90, 187);
+}
+
+.nav-highlight {
+    background-color: rgb(18, 122, 207);
+    height: 5px; /* Ajustez cette valeur pour la hauteur de la ligne rose */
+    width: calc(100% - 50px); /* Ajustez 50px pour contrôler le décalage du trait à droite */
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translateX(100%); /* Déplacez la ligne rose à l'extérieur de la barre de navigation */
+    transition: transform 0.3s ease, width 0.3s ease; /* Ajout de la transition pour la largeur aussi */
+    box-shadow: 0px 10px 20px rgba(255, 20, 147, 0.7); /* Ombre rose plus grande et plus visible */
+}
+
+.navbar:hover .nav-highlight {
+    transform: translateX(0);
+    width: 100%; /* Ceci couvrira la largeur totale lors du survol */
+}
+
+.nav-separator {
+    width: 6px; /* Largeur de la séparation verticale */
+    height: 40px; /* Hauteur de la séparation verticale */
+    background-color: #000000; /* Couleur de la séparation */
+    margin: 0 10px; /* Marge autour de la séparation */
+    border-radius: 5px; /* Ajoutez une bordure arrondie */
+}
+
+/**//**//**//**//**//**//**//**//**/
+/**//*FIN BARRE DE NAVIGATION*//**/
+/**//**//**//**//**//**//**//**//**/
+
+/****************************************************************************************************************/
+
+/**//**//**//**//**//**//**//**//**/
+     /**//* QUI SUIS-JE ? *//**/
+/**//**//**//**//**//**//**//**//**/
+
+.intro {
+    background-image: url('../images/backgroundLake.jpg'); /* Assurez-vous que le chemin est correct */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* ou 'scroll' si vous ne voulez pas d'effet de parallaxe */
+    background-color: black; /* Couleur de fond si l'image ne charge pas */
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: flex-start; /* Alignement vertical en haut */
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    text-align: center;
+    padding-top: 14vh; /* Ajoutez du padding en haut pour pousser vers le bas */
+}
+
+.portfolio-text {
+    margin: 0 auto;
+    width: auto;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.7); /* Couleur de fond avec opacité pour le texte */
+    padding: 45px; /* Ajoutez du padding autour du texte */
+}
+
+.portfolio-text h1, .portfolio-text h3 {
+    margin: 0;
+}
+
+h1{
+    font-size: 150px;
+}
+
+@media (max-width: 1780px) {
+    h1 {
+        font-size: 96px;
+    }
+        h3
+    {
+        font-size: 20px;
+    }
+}
+
+h2
+{
+    font-size: 38px;
+}
+
+h3
+{
+    font-size: 44px;
+}
+
+@media (max-width: 1140px) {
+    h1 {
+        font-size: 72px;
+    }
+        
+    h2
+    {
+        font-size: 40px;
+    }
+
+    h3
+    {
+        font-size: 28px
+    }
+}
+
+@media (max-width: 708px) {
+    h2 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 708px) {
+    h1 {
+        font-size: 62px;
+    }
+}
+
+@media (max-width: 708px) {
+    h3 {
+        font-size: 24px;
+    }
+}
+
+.qui-suis-je {
+    display: flex;
+    flex-direction: column; /* Empile les éléments verticalement */
+    justify-content: center; /* Centre verticalement le contenu */
+    align-items: center; /* Centre horizontalement le contenu */
+    margin: auto;
+    background: rgba(18, 0, 43, 0.904);
+    width: 95%;
+    border-radius: 35px;
+    box-shadow: 
+    0 -150px 85px rgba(18, 0, 43, 1), /* Ombre noire en haut */
+    0 150px 85px rgba(18, 0, 43, 1), /* Ombre noire en bas */
+    inset 0 0 60px rgba(204, 141, 196, 0.304);
+    z-index: 3;
+}
+
+.littletitle {
+    margin-bottom: 20px; /* Ajoutez une marge en bas pour espacer le titre */
+}
+
+.content {
+    display: flex;
+}
+
+.qui-suis-je img {
+    max-width: 100%; /* Assurez-vous que l'image ne dépasse pas la largeur de son conteneur */
+    height: auto; /* Permet à la hauteur de l'image de s'ajuster automatiquement */
+    margin-bottom: 30px;
+    margin-left: 30px;
+}
+
+.text-block {
+    width: 100%; /* Assurez-vous que le texte occupe toute la largeur de .content */
+    margin: 25px;
+    text-align: justify
+}
+
+.t-info {
+    font-size: 40px;
+    margin-left: 15px;
+    line-height: 10px; /* Réduit l'espace entre les lignes */
+    font-weight: bold;
+}
+
+.t-lorem{
+    margin-top: 100px;
+    margin-left: 10px;
+    margin-right: 35px;
+}
+
+/**//**//**//**//**//**//**//**//**/
+  /**//* FIN QUI SUIS-JE ? *//**/
+/**//**//**//**//**//**//**//**//**/
+
+/****************************************************************************************************************/
+
+/**//**//**//**//**//**//**//**//**/
+      /**//* TRAVAUX *//**/
+/**//**//**//**//**//**//**//**//**/
+
+.mes-travaux
+{
+    display: flex;
+    flex-direction: column; /* Empile les éléments verticalement */
+    align-items: center; /* Centre horizontalement le contenu */
+    margin: auto;
+}
+
+.mes-travaux h2 {
+    margin-bottom: 20px; /* Espace sous le titre */
+}
+
+.travaux-container {
+    display: flex;
+    flex-wrap: wrap; /* Les éléments passeront à la ligne sur les petits écrans */
+    justify-content: center; /* Centre les éléments horizontalement */
+    align-items: center; /* Alignement vertical si nécessaire */
+    gap: 20px; /* Espace entre les éléments */
+}
+
+.travail-item {
+    margin: 40px; /* Espace autour de chaque élément */
+    border-radius: 10px; /* Coins arrondis */
+    flex-wrap:wrap;
+}
+
+.travail-item p {
+    margin: 5px 0; /* Espace au-dessus et en dessous du texte */
+}
+
+.t-capacities
+{
+    text-align: center;
+}
+/**//**//**//**//**//**//**//**//**/
+    /**//* FIN TRAVAUX *//**/
+/**//**//**//**//**//**//**//**//**/
+
+/****************************************************************************************************************/
+
+/**//**//**//**//**//**//**//**//**/
+      /**//* COMPETENCES *//**/
+/**//**//**//**//**//**//**//**//**/
+
+.competences
+{
+    display: flex;
+    flex-direction: column; /* Empile les éléments verticalement */
+    justify-content: center; /* Centre verticalement le contenu */
+    align-items: center; /* Centre horizontalement le contenu */
+    margin: auto;
+    color: white;
+    width: 70%;
+}
+
+.textContainer
+{
+    width: fit-content;
+    border-radius: 10px;
+    background-color: rgba(122, 43, 141, 0.356);
+}
+
+#capacities {
+    width: 100%; /* Ajustez en fonction de la largeur désirée */
+    margin-right: 150px;
+}
+
+#capacities, #capacities ul{
+    margin: 0;
+    list-style: none; /* Enlève les puces */
+    text-align: center; /* Ajustez en fonction de l'alignement désiré */
+}
+
+#capacities li {
+    background-color: #751D45;
+    font-size: 32px;
+    border-radius: 10px;
+    margin-bottom: 9%;
+    box-shadow: none;
+    border: solid 3px #F72585;
+}
+
+
+#capacities li li{
+    max-height:0;
+    overflow: hidden;
+    transition: all .5s;
+    border-radius:0;
+    background: #444;
+    box-shadow: none;
+    border:none;
+    margin:0;
+    height: fit-content;
+    
+}
+
+#capacities li a{
+    display: block;
+    white-space: nowrap; /* Empêche le retour à la ligne du texte */
+    padding: 8px 16px; /* Ajustez pour plus d'espacement autour du texte */
+    font-size: 1.2em;
+}
+
+#capacities ul li a, #capacities li:hover li a{
+    font-size: 1em;
+}
+
+/* Ajout d'un effet hover quand le curseur passe sur au dessus des boutons capacité */
+#capacities li:hover{
+    background: #F72585;
+}
+
+#capacities ul li:last-child {
+    border-radius: 0 0 6px 6px;
+    border: none;
+}
+
+#capacities li:hover li{
+    max-height: 15em;
+}
+
+#logo{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.softwares
+{
+    display:flex;
+    justify-content:space-between;
+}
+
+@media (max-width: 788px) {
+    #capacities {
+        width:75%;
+    }
+
+    td.first-td, td.second-td
+    {
+        align-items: center;
+    }
+
+    .softwares
+    {
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+}
+
+@media (max-width: 458px) {
+    #capacities {
+        width:50%;
+    }
+}
+
+.vertical-td {
+    width: 200px; /* Largeur de la colonne verticale */
+}
+
+.vertical-line {
+    width: 3px; /* Largeur de la ligne verticale */
+    height: auto; /* Hauteur automatique en fonction du contenu */
+    background-color: #fff; /* Couleur de la ligne */
+    margin: 0 auto; /* Centre la ligne dans le conteneur */
+}
+
+@media (max-width: 1708px) {
+    .vertical-line {
+        display: none;
+    }
+}
+
+@media (max-width: 1629px) {
+    td{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+}
+
+.td-separator {
+    width: 2px; /* Largeur de la séparation verticale */
+    height: 560px; /* Hauteur de la séparation verticale */
+    background-color: #fff; /* Couleur de la séparation */
+}
+
+td{
+    width: 500px;
+    font-size: 30px;
+}
+
+/**//**//**//**//**//**//**//**//**/
+    /**//* FIN COMPETENCES *//**/
+/**//**//**//**//**//**//**//**//**/
+
+footer {
+    display: flex;
+    width: 100%;
+    height: 90px;
+    background-color:  #430967;
+    color: white;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif ;
+    margin-top: 50px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .finish-bar {
+    list-style: none; /* Supprime les puces de la liste */
+    display: flex; /* Utilisez flexbox pour aligner les éléments */
+    justify-content: center; /* Centre les éléments horizontalement */
+    align-items: center; /* Centre les éléments verticalement */
+}
+
+.finish-bar img {
+    width: 60%;
+}
+
+  /**//**//**//**//**//**//**//**//**/
+/*/ AJUSTEMENTS RESPONSIVE GENERAUX /*/
+  /**//**//**//**//**//**//**//**//**/
+  
+@media (max-width: 1050px) {
+    .navbar-nav {
+        margin: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column;
+        font-size: 20px;
+    }
+
+    .intro, .qui-suis-je, .mes-travaux, .competences {
+        width: 100%; /* Pleine largeur pour petits écrans */
+    }
+
+    .content, .travaux-container, #container {
+        flex-direction: column;
+    }
+
+    .konan-img{
+        width: 50%;
+    }
+
+    .vertical-td, .vertical-line, .td-separator {
+        display: none; /* Cache la ligne verticale pour les petits écrans */
+    }
+
+    .travail-item, .textContainer, .softwares {
+        width: 75%; /* Pleine largeur pour les sections */
+    }
+
+    .travail-item img, .qui-suis-je img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+}
