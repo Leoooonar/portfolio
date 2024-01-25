@@ -201,6 +201,7 @@ h3
     flex-direction: column; /* Empile les éléments verticalement */
     justify-content: center; /* Centre verticalement le contenu */
     align-items: center; /* Centre horizontalement le contenu */
+    text-align: center;
     margin: auto;
     color: black;
     width: 100%;
@@ -219,7 +220,6 @@ h3
     max-width: 100%; /* Assurez-vous que l'image ne dépasse pas la largeur de son conteneur */
     height: auto; /* Permet à la hauteur de l'image de s'ajuster automatiquement */
     margin-bottom: 30px;
-    margin-left: 30px;
 }
 
 .text-block {
@@ -302,20 +302,21 @@ h3
     justify-content: center; /* Centre verticalement le contenu */
     align-items: center; /* Centre horizontalement le contenu */
     margin: auto;
-    color: white;
-    width: 70%;
+    background-color: white;
+    width: 100%;
 }
 
 .textContainer
 {
     width: fit-content;
     border-radius: 10px;
-    background-color: rgba(122, 43, 141, 0.356);
+    background-color: rgba(0, 0, 0, 0.356);
 }
 
 #capacities {
     width: 100%; /* Ajustez en fonction de la largeur désirée */
     margin-right: 150px;
+    color: white;
 }
 
 #capacities, #capacities ul{
@@ -325,12 +326,12 @@ h3
 }
 
 #capacities li {
-    background-color: #751D45;
+    background-color: #000000;
     font-size: 32px;
     border-radius: 10px;
     margin-bottom: 9%;
     box-shadow: none;
-    border: solid 3px #F72585;
+    border: solid 3px #6b6b6b;
 }
 
 
@@ -360,7 +361,7 @@ h3
 
 /* Ajout d'un effet hover quand le curseur passe sur au dessus des boutons capacité */
 #capacities li:hover{
-    background: #F72585;
+    background: #405dff;
 }
 
 #capacities ul li:last-child {
@@ -454,7 +455,7 @@ footer {
     display: flex;
     width: 100%;
     height: 90px;
-    background-color:  #430967;
+    background-color:  #000000;
     color: white;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif ;
@@ -463,16 +464,42 @@ footer {
     justify-content: center;
   }
 
+
   .finish-bar {
     list-style: none; /* Supprime les puces de la liste */
     display: flex; /* Utilisez flexbox pour aligner les éléments */
     justify-content: center; /* Centre les éléments horizontalement */
     align-items: center; /* Centre les éléments verticalement */
+    flex-wrap: wrap;
 }
 
 .finish-bar img {
-    width: 60%;
+    width: 80px;
+    margin-left: 25px;
+    margin-right: 25px;
 }
+
+
+@media (max-width: 476px) {
+    .finish-bar img {
+        width: 50px;
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+}
+
+@media (max-width: 370px) {
+    .finish-bar img {
+        width: 40px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .nav-separator{
+        display: none;
+    }
+}
+
 
   /**//**//**//**//**//**//**//**//**/
 /*/ AJUSTEMENTS RESPONSIVE GENERAUX /*/
