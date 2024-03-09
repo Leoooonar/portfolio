@@ -41,7 +41,6 @@ main {
 body, ul {
     margin: 0;
     margin: auto;
-    font-size: 26px; /*pour le texte en général...*/
 }
 
 ul
@@ -60,6 +59,7 @@ ul
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    font-size: 26px;
     height: 80px; /* Adjust this value for the height of the navbar */
 }
 
@@ -92,6 +92,14 @@ ul
 }
 
 .nav-separator {
+    width: 6px; /* Largeur de la séparation verticale */
+    height: 40px; /* Hauteur de la séparation verticale */
+    background-color: #ffffff; /* Couleur de la séparation */
+    margin: 0 10px; /* Marge autour de la séparation */
+    border-radius: 5px; /* Ajoutez une bordure arrondie */
+}
+
+.nav-scd-separator {
     width: 6px; /* Largeur de la séparation verticale */
     height: 40px; /* Hauteur de la séparation verticale */
     background-color: #000000; /* Couleur de la séparation */
@@ -241,6 +249,96 @@ h3
     margin-right: 35px;
 }
 
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animatable-image {
+    width: 1700px;
+    opacity: 0;
+    transform: translateY(100%);
+}
+
+.image-slide-up {
+    opacity: 1;
+    transform: translateY(0);
+    animation: slideUp 1s ease forwards;
+}
+
+.video-container {
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+video {
+    /* Définir la largeur désirée et la hauteur se calculera automatiquement pour maintenir le ratio */
+    width: 1630px; /* ou toute autre largeur */
+    height: auto;
+    max-width: 100%; /* S'assure que la vidéo ne dépasse pas la largeur de l'écran */
+}
+
+.video-slider {
+    position: relative;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.slide-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #cfcfcfb7;
+    border-color: #6b6b6b15;
+    font-size: 34px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.slide-arrow:hover {
+    background-color: #cfcfcf;
+    border-color: #6b6b6bd7;
+}
+
+.prev-arrow {
+    left: -50px;
+}
+
+.next-arrow {
+    right: -50px;
+}
+
+.video-description {
+    text-align: center;
+    margin-top: 20px;
+}
+
+@media (max-width: 1775px) {
+    .slide-arrow {
+        top: 92%;
+        transform: translateY(10%);
+    }
+
+    .prev-arrow {
+        left: 0px;
+    }
+    
+    .next-arrow {
+        right: 0px;
+    }
+
+    /* Si les flèches sont trop grandes sur les petits écrans, réduisez la font-size */
+    .slide-arrow {
+        font-size: 28px;
+    }
+}
+
 /**//**//**//**//**//**//**//**//**/
   /**//* FIN QUI SUIS-JE ? *//**/
 /**//**//**//**//**//**//**//**//**/
@@ -378,6 +476,7 @@ h3
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 75px;
 }
 
 .softwares
@@ -413,12 +512,13 @@ h3
 
 .vertical-td {
     width: 200px; /* Largeur de la colonne verticale */
+    color: black;
 }
 
 .vertical-line {
     width: 3px; /* Largeur de la ligne verticale */
     height: auto; /* Hauteur automatique en fonction du contenu */
-    background-color: #fff; /* Couleur de la ligne */
+    background-color: #000000; /* Couleur de la ligne */
     margin: 0 auto; /* Centre la ligne dans le conteneur */
 }
 
@@ -439,7 +539,7 @@ h3
 .td-separator {
     width: 2px; /* Largeur de la séparation verticale */
     height: 560px; /* Hauteur de la séparation verticale */
-    background-color: #fff; /* Couleur de la séparation */
+    background-color: #000000; /* Couleur de la séparation */
 }
 
 td{
@@ -459,11 +559,16 @@ footer {
     color: white;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif ;
-    margin-top: 50px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     align-items: center;
     justify-content: center;
   }
 
+  #contact
+  {
+    align-items: center;
+  }
 
   .finish-bar {
     list-style: none; /* Supprime les puces de la liste */

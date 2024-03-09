@@ -9,15 +9,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="../resources/css/style.css">
+    <script src="../resources/js/script.js"></script>
 </head>
     <body>
         <main>
             <nav class="navbar">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a href="#about-me">QUI SUIS-JE ?</a></li>
-                    <hr class="nav-separator">
+                    <hr class="nav-scd-separator">
                     <li class="nav-item"><a href="#projects">PROJETS</a></li>
-                    <hr class="nav-separator">
+                    <hr class="nav-scd-separator">
                     <li class="nav-item"><a href="#contact">COMPETENCES</a></li>
                 </ul>
                 <div class="nav-highlight"></div>
@@ -44,44 +45,55 @@
             <div class="littletitle">
               <h2 class="work">COMPOSITIONS</h2>
             </div>
-            <img src="../resources/images/wallpaperEyes2.png" alt="Composition avec un demi-visage">
-            <img src="../resources/images/wallpaperAllumette2.png" alt="Composition avec un corps et une allumete">
+            <img src="../resources/images/wallpaperEyes2.png" alt="Composition avec un demi-visage" class="animatable-image">
+            <img src="../resources/images/wallpaperAllumette2.png" alt="Composition avec un corps et une allumete" class="animatable-image">
             <div class="littletitle">
               <h2 class="work">PHOTOGRAPHIE</h2>
             </div>
-            <img src="../resources/images/wallImage2.png" alt="Photographie d'une personne">
+            <img src="../resources/images/wallImage2.png" alt="Photographie d'une personne" class="animatable-image">
             </section>
             <section id="projects" class="qui-suis-je">
               <div class="littletitle">
-                <h2 class="work">VIDEOS</h2>
+                  <h2 class="work">VIDEOS</h2>
               </div>
-                         <!--
-                        Y
-                        -->
-            </section>
+              <div class="video-slider">
+                  <button class="slide-arrow prev-arrow">&lt;</button>
+                  <div class="video-container">
+                      <video id="videoPlayer" controls width="100%">
+                          <source src="../resources/videos/firstVideo.mp4" type="video/mp4">
+                          Désolé, votre navigateur ne prend pas en charge les vidéos intégrées.
+                      </video>
+                  </div>
+                  <button class="slide-arrow next-arrow">&gt;</button>
+                  <div class="video-description">
+                      <p id="videoDesc">
+                          Description pour la vidéo 1.
+                      </p>
+                  </div>
+              </div>
+          </section>          
             <section class="competences">
                 <div class="littletitle">
-                    <h2 class="work">Compétences et outils de travail</h2>
+                    <h2 class="work">COMPETENCES</h2>
                 </div>
                 <div id="container">
                     <table>
                         <tr>
                           <td class="first-td">
                             <ul id="capacities">
-                              <li>Conception graphique
+                              <li>Photographie
                               <ul>
-                                  <li>Création de logos</li>
-                                  <li>Conception d'affiches</li>
-                                  <li>Mise en page (layout)</li>
-                                  <li>Design de supports imprimés</li>
-                                  <li>Mockup</li>
+                                  <li>Traitement de l'image</li>
+                                  <li>Installation du set</li>
+                                  <li>Développement et impression de photos</li>
                               </ul>
                             </li>
-                              <li>Illustration
+                              <li>Sound Design
                               <ul>
-                                <li>Dessin en digital</li>
-                                <li>Dessin sur papier</li>
-                                <li>Infographie</li>
+                                <li>Instrumentales</li>
+                                <li>Sons ambiants</li>
+                                <li>Sons interactifs</li>
+                                <li>Mixage</li>
                               </ul> 
                             </li>
                             <li>UI/UX design
@@ -89,7 +101,6 @@
                                 <li>Wireframing</li>
                                 <li>Prototypage</li>
                                 <li>Conception d'interface utilisateur</li>
-                                <li>Tests d'utilisabilité</li>
                                 <li>Design Responsive</li>
                               </ul>
                             </li>
@@ -99,6 +110,7 @@
                                   <li>Derushage</li>
                                   <li>Montage</li>
                                   <li>Post-prod</li>
+                                  <li>Ecriture Scénario</li>
                                 </ul>
                             </li>
                             </ul>
@@ -111,25 +123,20 @@
                           </div>
                           <td class="second-td">
                             <div class="softwares">
-                              <img id="logo" src="../resources/images/krita-logo.png" alt="logo de Krita">
-                              <p class="">Krita</p>
+                              <img id="logo" src="../resources/icons/figmaIcon.png" alt="logo de figma">
+                              <p class="">FIGMA</p>
                             </div>
                             <div class="softwares">
-                              <img id="logo" src="../resources/images/figma-logo.png" alt="logo de Figma">
-                              <p>Figma</p>
+                              <img id="logo" src="../resources/icons/flstudioIcon.png" alt="logo de flstudio">
+                              <p>FL STUDIO</p>
                             </div>
                             <div class="softwares">
-                              <img id="logo" src="../resources/images/adobeCloud-logo.png" alt="logo de adobe creative cloud">
-                              <p>Adobe creative cloud</p>
+                              <img id="logo" src="../resources/icons/visualcodeIcon.png" alt="logo de visual studio code">
+                              <p>HTML/CSS/PHP/C#/SQL/JS</p>
                             </div>
                             <div class="softwares">
-                              <img id="logo" src="../resources/images/capcut-logo.png" alt="logo de capcut">
-                              <p>CapCut</p>
-                            </div>
-                            <div class="softwares">
-                              <img id="logo" src="../resources/images/notion-logo.png">
-                              <img id="logo" src="../resources/images/obsidian-logo.png" alt="logo d'obsidian">
-                              <p>Notion / Obsidian</p>
+                              <img id="logo" src="../resources/icons/ACC.png" alt="logo Lightroom">
+                              <p>SUITE ADOBE</p>
                             </div>
                           </td>
                         </tr>
